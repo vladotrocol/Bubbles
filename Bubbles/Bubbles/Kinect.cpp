@@ -1,8 +1,11 @@
 #include "Kinect.h"
 
+//Constructor
 Kinect::Kinect(void){
 };
 
+
+//Initialise Kinect
 bool Kinect::initialiseKinect(void){
 	int numSensors;
 	if (NuiGetSensorCount(&numSensors) < 0 || numSensors < 1) return false;

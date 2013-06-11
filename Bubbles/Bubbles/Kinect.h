@@ -13,4 +13,5 @@ class Kinect{
 
 		Kinect(void);
 		bool initialiseKinect(void);
+		void calibrateCameraProjector(void);
 };

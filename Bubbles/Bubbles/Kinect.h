@@ -4,6 +4,9 @@
 #include <NuiApi.h>
 #include <NuiImageCamera.h>
 #include <NuiSensor.h>
+#include <string>
+
+using namespace std;
 
 class Kinect{
 	public:
@@ -13,5 +16,5 @@ class Kinect{
 
 		Kinect(void);
 		bool initialiseKinect(void);
-		void calibrateCameraProjector(void);
+		bool hasNextFrame(string s, NUI_IMAGE_FRAME &imageFrame);
 };

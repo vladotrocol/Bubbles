@@ -26,9 +26,9 @@ void Tracker::display(Kinect& kinect){
 
 Mat Tracker::readFrameDepth(Kinect& kinect){
 	Mat depthFrame(height, width, CV_8U);
+	BYTE data[width*height*3];
 
 	NUI_LOCKED_RECT LockedRect;
-	BYTE data[width*height*3];
 	NUI_IMAGE_FRAME imageFrame;
 
 	if (kinect.sensor->NuiImageStreamGetNextFrame(kinect.depthStream, 5, &imageFrame) < 0) 
@@ -74,7 +74,9 @@ Mat Tracker::readFrameRGB(Kinect& kinect){
 
 	NUI_IMAGE_FRAME imageFrame;
 	NUI_LOCKED_RECT LockedRect;
-	if (kinect.sensor->NuiImageStreamGetNextFrame(kinect.rgbStream, 10, &imageFrame) < 0) {
+
+	//if (!kinect.hasNextFrame("rgb", imageFrame)) {
+	if(kinect.sensor->NuiImageStreamGetNextFrame(kinect.rgbStream, 10, &imageFrame) < 0){
 		cout << "No Rframe available\n";
 		return Mat();
 	}
@@ -88,6 +90,7 @@ Mat Tracker::readFrameRGB(Kinect& kinect){
 	else{
 		return Mat();
 	}
+
 	texture->UnlockRect(0);
 	kinect.sensor->NuiImageStreamReleaseFrame(kinect.rgbStream, &imageFrame);
 	rgbFrame.convertTo(rgbFrame, CV_8UC3);

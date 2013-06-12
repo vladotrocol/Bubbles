@@ -17,3 +17,21 @@ bool Kinect::initialiseKinect(void){
 
 	return sensor;
 };
+
+//Check if kinect has next frame
+bool Kinect::hasNextFrame(string s, NUI_IMAGE_FRAME &imageFrame){
+	HANDLE stream;
+	if(s.compare("rgb") == 0){
+		stream = &rgbStream;
+	}
+	else if(s.compare("depth")==0){
+		stream = &depthStream;
+	}
+	else{
+		return false;
+	}
+	if(sensor->NuiImageStreamGetNextFrame(stream, 10, &imageFrame) < 0){
+		return true;
+	}
+	return false;
+}

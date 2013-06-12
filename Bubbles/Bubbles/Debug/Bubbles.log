@@ -1,4 +1,4 @@
-﻿Build started 6/12/2013 3:45:50 PM.
+﻿Build started 6/12/2013 5:41:34 PM.
      1>Project "D:\Projects\Bubbles\Bubbles\Bubbles\Bubbles.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Bubbles.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -25,4 +25,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.40
+Time Elapsed 00:00:02.43

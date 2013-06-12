@@ -20,10 +20,15 @@ using namespace cv;
 
 class Tracker{
 	public:
-		Mat src;
+		Mat src,
+			distortion,
+			rgb_src,
+			depth_src;
 		bool iHomog; //What is this?
 
 		Tracker(void);
 		void calibrateCameraProjector(void);
-		Mat readFrameRGB(const Kinect& kinect);
+		void display(Kinect& kinect);
+		Mat readFrameRGB(Kinect& kinect);
+		Mat readFrameDepth(Kinect& kinect);
 };

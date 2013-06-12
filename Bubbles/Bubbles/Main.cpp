@@ -1,11 +1,13 @@
 #include <iostream>
-#include "Kinect.h"
+#include "Tracker.h"
 
 using namespace std;
 
 int main(){
-	Kinect k;
-	cout<<k.initialiseKinect();
+	Tracker T;
+	Kinect K;
+	cout<<K.initialiseKinect();
+	T.display(K);
 	cin.get();
 	return 0;
 }

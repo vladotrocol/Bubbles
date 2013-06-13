@@ -8,13 +8,22 @@
 
 using namespace std;
 
+#define width 640 
+#define height 480
+
 class Kinect{
 	public:
 		HANDLE rgbStream;
 		HANDLE depthStream;
 		INuiSensor* sensor;
 
+		//External API
 		Kinect(void);
 		bool initialiseKinect(void);
-		bool hasNextFrame(string s, NUI_IMAGE_FRAME &imageFrame);
+		bool hasNextFrame(char s, NUI_IMAGE_FRAME *imageFrame);
+		bool releaseFrame(char s, NUI_IMAGE_FRAME *imageFrame);
+		BYTE* getDepthData(NUI_LOCKED_RECT *LockedRect);
+
+		//Internal
+		HANDLE whichStream(char s);
 };

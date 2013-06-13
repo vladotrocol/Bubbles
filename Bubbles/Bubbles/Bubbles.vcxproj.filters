@@ -21,7 +21,7 @@
     <ClCompile Include="Kinect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tracker.cpp">
+    <ClCompile Include="KOCVStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Kinect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tracker.h">
+    <ClInclude Include="KOCVStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

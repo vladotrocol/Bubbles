@@ -1,13 +1,14 @@
 #include <iostream>
-#include "Tracker.h"
+#include "KOCVStream.h"
 
 using namespace std;
 
 int main(){
-	Tracker T;
 	Kinect K;
 	cout<<K.initialiseKinect();
-	T.display(K);
+	
+	KOCVStream STREAMS(K);
+	STREAMS.displayAll();
 	cin.get();
 	return 0;
 }

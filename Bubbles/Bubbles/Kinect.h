@@ -24,6 +24,7 @@ class Kinect{
 		bool releaseFrame(char s, NUI_IMAGE_FRAME *imageFrame);
 		BYTE* getDepthData(NUI_LOCKED_RECT *LockedRect);
 
+	private:
 		//Internal
 		HANDLE whichStream(char s);
 };

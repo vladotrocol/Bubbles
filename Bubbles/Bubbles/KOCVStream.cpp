@@ -1,17 +1,19 @@
 #include "KOCVStream.h"
 
 //Constructor
-KOCVStream::KOCVStream(Kinect& k):kinect(k){
-};
+KOCVStream::KOCVStream(Kinect& k):kinect(k)
+{};
 
 //----------------------------API------------------------
 
 //Display all data on windows
 void KOCVStream::displayAll(){
-
+	Filters filter;
 	namedWindow("rgb_window",0);
 	namedWindow("depth_window",0);
-
+	namedWindow("ero_window",0);
+	namedWindow("tresh_window",0);
+	namedWindow("dila_window",0);
 	while(1){
 		readFrame('r');
 		imshow("rgb_window",rgb_src);
@@ -19,6 +21,9 @@ void KOCVStream::displayAll(){
 
 		readFrame('d');
 		imshow("depth_window",depth_src);
+		imshow("tresh_window",filter.thresholdFilter(depth_src));
+		imshow("ero_window",filter.erosionFilter(filter.thresholdFilter(depth_src)));
+		imshow("dila_window",filter.dilationFilter(filter.thresholdFilter(depth_src)));
 		waitKey(10);
 	}
 };

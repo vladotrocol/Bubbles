@@ -24,12 +24,18 @@
     <ClCompile Include="KOCVStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Filters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Kinect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="KOCVStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Filters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

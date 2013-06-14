@@ -10,6 +10,7 @@
 #include <opencv2\imgproc\imgproc.hpp>
 #include <string>
 #include "Kinect.h"
+#include "Filters.h"
 
 #define width 640 
 #define height 480
@@ -19,8 +20,7 @@ using namespace cv;
 
 class KOCVStream{
 	public:
-		Mat src,
-			rgb_src,
+		Mat rgb_src,
 			depth_src;
 		Kinect kinect;
 
@@ -31,6 +31,7 @@ class KOCVStream{
 		void display(char s);
 		void readFrame(char s);
 
+	private:
 		//Internal
 		Mat tryReadFrame(char s);
 		Mat kFrameToMat(char s,NUI_IMAGE_FRAME imageFrame);

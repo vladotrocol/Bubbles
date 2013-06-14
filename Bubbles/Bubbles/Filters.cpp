@@ -1,21 +1,33 @@
 #include "Filters.h"
 
-int threshold_value = 1;
-int threshold_type = THRESH_BINARY_INV;
-int const max_value = 255;
-int const max_type = 4;
-int const max_BINARY_value = 255;
-
 //Constructor
 Filters::Filters():thresholdOn(false),
 	erosionOn(false),
 	dilationOn(false)
 {};
 
+Mat Filters::applyFilter(char s, Mat src){
+	if(s == 't'){
+		return thresholdFilter(src);
+	}else if(s == 'e'){
+		return erosionFilter(thresholdFilter(src));
+	}else if(s == 'i'){
+		return dilationFilter(thresholdFilter(src));
+	}else{
+		return src;
+	}
+};
+
 //Apply Threshold Filer
 Mat Filters::thresholdFilter(Mat src){
-	Mat result;
-	threshold(src, result, threshold_value, max_BINARY_value, threshold_type);
+	Mat src_grey, result;
+	if(src.type() == CV_8U){
+		threshold(src, result, 1, 255, THRESH_BINARY_INV);
+	}
+	else{
+		cvtColor(src, src_grey, CV_BGR2GRAY);
+		threshold(src_grey, result, 50, 255, THRESH_BINARY);
+	}
 	return result;
 };
 

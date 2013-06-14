@@ -19,6 +19,7 @@ class Filters{
 		bool dilationOn;
 
 		Filters(void);
+		Mat applyFilter(char s, Mat src);
 		Mat thresholdFilter(Mat src);
 		Mat erosionFilter(Mat src);
 		Mat dilationFilter(Mat src);

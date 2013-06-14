@@ -1,41 +1,45 @@
 #include "KOCVStream.h"
 
+int const max_type = 4;
+char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted";
+char* trackbar_value = "Value";
+
 //Constructor
-KOCVStream::KOCVStream(Kinect& k):kinect(k)
+KOCVStream::KOCVStream(Kinect& k, Filters& filter):kinect(k)
 {};
 
 //----------------------------API------------------------
 
-//Display all data on windows
-void KOCVStream::displayAll(){
-	Filters filter;
-	namedWindow("rgb_window",0);
-	namedWindow("depth_window",0);
-	namedWindow("ero_window",0);
-	namedWindow("tresh_window",0);
-	namedWindow("dila_window",0);
-	while(1){
-		readFrame('r');
-		imshow("rgb_window",rgb_src);
-		waitKey(10);
-
-		readFrame('d');
-		imshow("depth_window",depth_src);
-		imshow("tresh_window",filter.thresholdFilter(depth_src));
-		imshow("ero_window",filter.erosionFilter(filter.thresholdFilter(depth_src)));
-		imshow("dila_window",filter.dilationFilter(filter.thresholdFilter(depth_src)));
-		waitKey(10);
+//Display streams in windows
+//FLAG grammar is: ((r||d)(t||e||i)*)*
+void KOCVStream::display(char* s){
+	string b = "_window";
+	for(int i=0;i<strlen(s);i++){
+		namedWindow(s[i]+b,0);
 	}
-};
-
-
-//Display a single stream
-void KOCVStream::display(char s){
-	namedWindow(&s, 0);
 	while(1){
-		readFrame(s);
-		imshow(&s, *whichSource(s));
-		waitKey(10);
+		int j=0;
+		while(j<strlen(s)){
+			if(s[j]=='r'||s[j]=='d'){
+				readFrame(s[j]);
+			}
+			else{
+				cerr<<"Some flag error in display function";
+				break;
+			}
+			int i=j;
+			do{
+				imshow(s[i]+b, filter.applyFilter(s[i],*whichSource(s[j])));
+				waitKey( 20 );
+				i++;
+			}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
+			j=i;
+		}	
+		char c = waitKey( 20 );
+		//If escape is pressed exit
+		if( (char)c == 27 ){
+			break; 
+		}	
 	}
 };
 

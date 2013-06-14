@@ -23,12 +23,12 @@ class KOCVStream{
 		Mat rgb_src,
 			depth_src;
 		Kinect kinect;
+		Filters filter;
 
-		KOCVStream(Kinect& kinect);
+		KOCVStream(Kinect& kinect, 	Filters& filter);
 
 		//External Api
-		void displayAll();
-		void display(char s);
+		void display(char* s);
 		void readFrame(char s);
 
 	private:

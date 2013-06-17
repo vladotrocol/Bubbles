@@ -8,7 +8,7 @@ using namespace std;
 
 class IBubbleState{
 	public:
-		virtual void addBubble(void)=0;
+		virtual void addBubble(Bubble b)=0;
 		virtual unsigned int getUnknownBubble(void)=0;
 		virtual void updateBubble(unsigned int ID, int x, int y, int z)=0;
 		virtual map<unsigned int, Bubble> getCurrentState(void)=0;
@@ -28,7 +28,7 @@ class BubbleState: public IBubbleState{
 	public:
 
 		//Methods
-		static BubbleState instance(void);
+		static BubbleState& instance(void);
 		void addBubble(Bubble b);
 		unsigned int getUnknownBubble(void);
 		void updateBubble(unsigned int ID, int x, int y, int z);

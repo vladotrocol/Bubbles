@@ -9,11 +9,8 @@ KOCVStream::KOCVStream(Kinect& k, Filters& filter):kinect(k)
 //Display streams in windows
 //FLAG grammar is: ((r||d)(t||e||i)*)*
 void KOCVStream::display(char* s){
-	string b = "_window";
-	for(int i=0;i<strlen(s);i++){
-		namedWindow(s[i]+b,0);
-		//filter.generateControls(s, *whichSource(s[j])), this);
-	}
+	string b = "_window_";
+	generateWindows(s);
 	while(1){
 		int j=0;
 		while(j<strlen(s)){
@@ -26,7 +23,7 @@ void KOCVStream::display(char* s){
 			}
 			int i=j;
 			do{
-				imshow(s[i]+b, filter.applyFilter(s[i],*whichSource(s[j])));
+				imshow(s[j]+b+s[i], filter.applyFilter(s[i],*whichSource(s[j])));
 				waitKey( 20 );
 				i++;
 			}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
@@ -143,5 +140,24 @@ Mat* KOCVStream::whichSource(char s){
 		cerr<<"Incorrect source";
 		return NULL;
 	}
-}
+};
 
+void KOCVStream::generateWindows(char* s){
+string b = "_window_";
+	int j=0;
+	while(j<strlen(s)){
+			if(s[j]=='r'||s[j]=='d'){
+				readFrame(s[j]);
+			}
+			else{
+				cerr<<"Some flag error in display function";
+				break;
+			}
+			int i=j;
+			do{
+				namedWindow(s[j]+b+s[i],0);
+				i++;
+			}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
+			j=i;
+		}	
+};

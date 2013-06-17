@@ -39,5 +39,6 @@ class KOCVStream{
 		BYTE* whichImageData(char s, NUI_LOCKED_RECT* LockedRect);
 		int whichDataType(char s);
 		Mat* whichSource(char s);
+		void generateWindows(char* s);
 		
 };

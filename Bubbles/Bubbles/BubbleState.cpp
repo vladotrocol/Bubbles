@@ -3,7 +3,7 @@
 BubbleState::BubbleState(){
 };
 
-BubbleState BubbleState::instance(){
+BubbleState& BubbleState::instance(){
 	static BubbleState _instance;
 	return _instance;
 };

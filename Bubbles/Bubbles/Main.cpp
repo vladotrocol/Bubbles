@@ -8,7 +8,7 @@ int main(){
 	Filters F;
 	cout<<K.initialiseKinect();
 	KOCVStream STREAMS(K,F);
-	STREAMS.display("rteideei");
+	STREAMS.display("dtei");
 	cin.get();
 	return 0;
 }

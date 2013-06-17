@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FF37357-1E08-4247-B29C-FAC8E401D700}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>testOpenCV</RootNamespace>
+    <ProjectName>BubblesDisoplay</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="OpenCV_debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(WD_LIBS_HOME)\opencv\build\include\;$(WD_LIBS_HOME)\sleep;$(WD_LIBS_HOME)\pthread\include;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OIS;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost;$(SolutionDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_calib3d240d.lib;opencv_contrib240d.lib;opencv_core240d.lib;opencv_features2d240d.lib;opencv_flann240d.lib;opencv_gpu240d.lib;opencv_haartraining_engined.lib;opencv_highgui240d.lib;opencv_imgproc240d.lib;opencv_legacy240d.lib;opencv_nonfree240d.lib;opencv_ml240d.lib;opencv_objdetect240d.lib;opencv_photo240d.lib;opencv_stitching240d.lib;opencv_video240d.lib;opencv_videostab240d.lib;pthreadVC2.lib;pthreadVSE2.lib;OgreMain_d.lib;OIS_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <AdditionalLibraryDirectories>$(WD_LIBS_HOME)\opencv\build\x86\vc10\lib;$(WD_LIBS_HOME)\tbb40_20120408oss\lib\ia32\vc10;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost\lib;$(WD_LIBS_HOME)\pthread\lib;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug\opt;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(WD_LIBS_HOME)\opencv\build\include\;$(WD_LIBS_HOME)\sleep;$(WD_LIBS_HOME)\pthread\include;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OIS;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost;$(SolutionDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opencv_calib3d240.lib;opencv_contrib240.lib;opencv_core240.lib;opencv_features2d240.lib;opencv_flann240.lib;opencv_gpu240.lib;opencv_haartraining_engine.lib;opencv_highgui240.lib;opencv_imgproc240.lib;opencv_legacy240.lib;opencv_nonfree240.lib;opencv_ml240.lib;opencv_objdetect240.lib;opencv_photo240.lib;opencv_stitching240.lib;opencv_video240.lib;opencv_videostab240.lib;pthreadVC2.lib;pthreadVSE2.lib;OgreMain.lib;OIS.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(WD_LIBS_HOME)\opencv\build\x86\vc10\lib;$(WD_LIBS_HOME)\tbb40_20120408oss\lib\ia32\vc10;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost\lib;$(WD_LIBS_HOME)\pthread\lib;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\release\opt;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\release</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CallibrationEngine\Homography.cpp" />
+    <ClCompile Include="CallibrationEngine\IClock.cpp" />
+    <ClCompile Include="CallibrationEngine\IEventProducer.cpp" />
+    <ClCompile Include="CallibrationEngine\VariableParameter.cpp" />
+    <ClCompile Include="CallibrationEngine\VariableParameterEventObserver.cpp" />
+    <ClCompile Include="DisplayKernel\OgreApplications\BaseApplication.cpp" />
+    <ClCompile Include="DisplayKernel\OgreApplications\CompositeOgreApplication.cpp" />
+    <ClCompile Include="DisplayKernel\OgreApplications\VideoPlayer.cpp" />
+    <ClCompile Include="DisplayKernel\OgreUtils\CameraManager.cpp" />
+    <ClCompile Include="DisplayKernel\OgreUtils\CameraOISController.cpp" />
+    <ClCompile Include="ImageProceser\ImageProcesser.cpp" />
+    <ClCompile Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="WaterDisplayUSBController\COMToolkit.cpp" />
+    <ClCompile Include="WaterDisplayUSBController\WDDLayer.cpp" />
+    <ClCompile Include="WaterDisplayUSBController\XmosConfig.cpp" />
+    <ClCompile Include="WaterDisplayUSBController\XMOSControlPlugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CallibrationEngine\Homography.h" />
+    <ClInclude Include="CallibrationEngine\IClock.h" />
+    <ClInclude Include="CallibrationEngine\IEventObserver.h" />
+    <ClInclude Include="CallibrationEngine\IEventProducer.h" />
+    <ClInclude Include="CallibrationEngine\IPlugin.h" />
+    <ClInclude Include="CallibrationEngine\VariableParameterEventObserver.h" />
+    <ClInclude Include="CallibrationEngine\VariableParameter.h" />
+    <ClInclude Include="DisplayKernel\OgreApplications\BaseApplication.h" />
+    <ClInclude Include="DisplayKernel\OgreApplications\CompositeOgreApplication.h" />
+    <ClInclude Include="DisplayKernel\OgreApplications\IOgreApplication.h" />
+    <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\AttachPointData.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraData.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraManager.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraOISController.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraUtils.h" />
+    <ClInclude Include="DisplayKernel\OgreUtils\ViewportData.h" />
+    <ClInclude Include="ImageProceser\ImageProcesser.h" />
+    <ClInclude Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.h" />
+    <ClInclude Include="WaterDisplayUSBController\COMToolkit.h" />
+    <ClInclude Include="WaterDisplayUSBController\WDDLayer.h" />
+    <ClInclude Include="WaterDisplayUSBController\XmosConfig.h" />
+    <ClInclude Include="WaterDisplayUSBController\XMOSControlPlugin.h" />
+    <ClInclude Include="WaterDisplayUSBController\XMOSPluginEventObservers.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

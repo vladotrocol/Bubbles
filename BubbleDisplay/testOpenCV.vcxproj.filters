@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="CallibrationEngine">
+      <UniqueIdentifier>{f4060ec2-8b0d-4e49-9234-bdde4d1e7e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageProcesser">
+      <UniqueIdentifier>{d9fa5aa7-54cd-4381-9b10-eba1c694b36e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageProcesser\PointGreyImageProcesser">
+      <UniqueIdentifier>{ae0acc30-59c8-4d97-95a2-a40f92759f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DisplayKernel">
+      <UniqueIdentifier>{9810acc9-746c-4f94-a3d2-a0d30ee5e192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DisplayKernel\OgreUtils">
+      <UniqueIdentifier>{2a571943-1714-4e34-8a65-22e1941d0e8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DisplayKernel\OgreApplications">
+      <UniqueIdentifier>{0befab1d-5706-4b66-99f7-8211fd5691ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CallibrationEngine\Interaction">
+      <UniqueIdentifier>{59e73eca-e76a-4db3-b4ff-4a6641aa3ded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CallibrationEngine\WaterDisplayUSBController">
+      <UniqueIdentifier>{28d33c7f-f21c-4423-8426-3cc389075f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CallibrationEngine\Clock">
+      <UniqueIdentifier>{5adb1234-8c24-4b6f-bc37-b2bc12d52fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CallibrationEngine\Homographies">
+      <UniqueIdentifier>{39f15674-3e31-445a-90c9-f14f9be1ff7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp">
+      <Filter>ImageProcesser\PointGreyImageProcesser</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageProceser\ImageProcesser.cpp">
+      <Filter>ImageProcesser</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayKernel\OgreUtils\CameraManager.cpp">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayKernel\OgreUtils\CameraOISController.cpp">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayKernel\OgreApplications\BaseApplication.cpp">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayKernel\OgreApplications\CompositeOgreApplication.cpp">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\VariableParameter.cpp">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\VariableParameterEventObserver.cpp">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\IEventProducer.cpp">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterDisplayUSBController\WDDLayer.cpp">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterDisplayUSBController\XmosConfig.cpp">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterDisplayUSBController\COMToolkit.cpp">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterDisplayUSBController\XMOSControlPlugin.cpp">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\Homography.cpp">
+      <Filter>CallibrationEngine\Homographies</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\IClock.cpp">
+      <Filter>CallibrationEngine\Clock</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayKernel\OgreApplications\VideoPlayer.cpp">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.h">
+      <Filter>ImageProcesser\PointGreyImageProcesser</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageProceser\ImageProcesser.h">
+      <Filter>ImageProcesser</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\AttachPointData.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraData.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraManager.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraOISController.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\CameraUtils.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreUtils\ViewportData.h">
+      <Filter>DisplayKernel\OgreUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreApplications\BaseApplication.h">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreApplications\CompositeOgreApplication.h">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreApplications\IOgreApplication.h">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\IEventObserver.h">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\VariableParameterEventObserver.h">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\VariableParameter.h">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\IEventProducer.h">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterDisplayUSBController\WDDLayer.h">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterDisplayUSBController\XmosConfig.h">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterDisplayUSBController\COMToolkit.h">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\IPlugin.h">
+      <Filter>CallibrationEngine\Interaction</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterDisplayUSBController\XMOSControlPlugin.h">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterDisplayUSBController\XMOSPluginEventObservers.h">
+      <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\Homography.h">
+      <Filter>CallibrationEngine\Homographies</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\IClock.h">
+      <Filter>CallibrationEngine\Clock</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h">
+      <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

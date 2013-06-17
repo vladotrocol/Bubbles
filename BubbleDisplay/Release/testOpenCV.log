@@ -1,0 +1,60 @@
+﻿Build started 17/01/2013 14:20:24.
+     1>Project "C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\testOpenCV.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\WaterDisplay.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\OpenCV\opencv\build\include\ /IC:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\sleep /IC:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\pthread\include /IC:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\FlyCapture2\include\FC1 /I"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\include\OIS" /I"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE" /I"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\boost" /I"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\\" /Zi /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp
+         PointGreyImageProcesser.cpp
+     1>C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\./FileReaders/FileInputStream.h(36): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp(268): warning C4482: nonstandard extension used: enum 'FlyCapturePixelFormat' used in qualified name
+     1>ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp(278): warning C4101: 'timestamp' : unreferenced local variable
+     1>ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp(341): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp(343): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp(343): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\Release\WaterDisplay.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\OpenCV\opencv\build\x86\vc10\lib /LIBPATH:C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\tbb40_20120408oss\lib\ia32\vc10 /LIBPATH:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\boost\lib" /LIBPATH:C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\FlyCapture2\lib\FC1 /LIBPATH:C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\pthread\lib /LIBPATH:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\lib\release\opt" /LIBPATH:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\libs_home\Ogre\OgreSDK_vc10_v1-8-0\lib\release" PGRFlyCapture.lib opencv_calib3d240.lib opencv_contrib240.lib opencv_core240.lib opencv_features2d240.lib opencv_flann240.lib opencv_gpu240.lib opencv_haartraining_engine.lib opencv_highgui240.lib opencv_imgproc240.lib opencv_legacy240.lib opencv_nonfree240.lib opencv_ml240.lib opencv_objdetect240.lib opencv_photo240.lib opencv_stitching240.lib opencv_video240.lib opencv_videostab240.lib pthreadVC2.lib pthreadVSE2.lib OgreMain.lib OIS.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\WaterDisplay.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\Release\WaterDisplay.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\Release\WaterDisplay.lib" /MACHINE:X86 Release\AsyncTriggerEx.obj
+         Release\Blob.obj
+         Release\Homography.obj
+         Release\ICallibrationEngine.obj
+         Release\IClock.obj
+         Release\IEventProducer.obj
+         Release\OpenCVCallibrationEngineV2.obj
+         Release\OpenCVCallibrationEngineV3.obj
+         Release\SimpleSegmentation.obj
+         Release\SimpleSegmentation2.obj
+         Release\StencilSubdivision.obj
+         Release\TimestampMatching.obj
+         Release\VariableParameter.obj
+         Release\VariableParameterEventObserver.obj
+         Release\VideoClock.obj
+         Release\InputManager.obj
+         Release\InputSensor.obj
+         Release\InputSubsystem.obj
+         Release\BaseApplication.obj
+         Release\CompositeOgreApplication.obj
+         Release\CycleOutput.obj
+         Release\LayerSimulation.obj
+         Release\RTTApplication.obj
+         Release\VideoPlayer.obj
+         Release\CameraManager.obj
+         Release\CameraOISController.obj
+         Release\ImageProcesser.obj
+         Release\PointGreyImageProcesser.obj
+         Release\main.obj
+         Release\COMToolkit.obj
+         Release\WDDLayer.obj
+         Release\XmosConfig.obj
+         Release\XMOSControlPlugin.obj
+         Release\WaterDisplayInfo.obj
+         testOpenCV.vcxproj -> C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\Release\WaterDisplay.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\Release\WaterDisplay.exe;#1" /manifest Release\WaterDisplay.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\WaterDisplay.unsuccessfulbuild".
+         Touching "Release\WaterDisplay.lastbuildstate".
+     1>Done Building Project "C:\Users\WaterDisplay\Desktop\WaterDisplayRoot\development\WaterDisplay-Stable-Diego\testOpenCV.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.23

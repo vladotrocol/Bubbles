@@ -1,11 +1,19 @@
 #include "Filters.h"
 
+char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted";
+char* trackbar_value = "Value";
+
+int threshold_value = 1;
+int threshold_type = THRESH_BINARY_INV;
+
 //Constructor
 Filters::Filters():thresholdOn(false),
 	erosionOn(false),
 	dilationOn(false)
 {};
 
+
+//Applies the requested filter to the corresponding source stream
 Mat Filters::applyFilter(char s, Mat src){
 	if(s == 't'){
 		return thresholdFilter(src);
@@ -22,11 +30,15 @@ Mat Filters::applyFilter(char s, Mat src){
 Mat Filters::thresholdFilter(Mat src){
 	Mat src_grey, result;
 	if(src.type() == CV_8U){
-		threshold(src, result, 1, 255, THRESH_BINARY_INV);
+		threshold_value = 1;
+		threshold_type = THRESH_BINARY_INV;
+		threshold(src, result, threshold_value, 255, threshold_type);
 	}
 	else{
+		threshold_value = 50;
+		threshold_type = THRESH_BINARY;
 		cvtColor(src, src_grey, CV_BGR2GRAY);
-		threshold(src_grey, result, 50, 255, THRESH_BINARY);
+		threshold(src_grey, result, threshold_value, 255, threshold_type);
 	}
 	return result;
 };

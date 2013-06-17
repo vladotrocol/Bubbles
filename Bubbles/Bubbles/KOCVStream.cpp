@@ -1,9 +1,5 @@
 #include "KOCVStream.h"
 
-int const max_type = 4;
-char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted";
-char* trackbar_value = "Value";
-
 //Constructor
 KOCVStream::KOCVStream(Kinect& k, Filters& filter):kinect(k)
 {};
@@ -16,6 +12,7 @@ void KOCVStream::display(char* s){
 	string b = "_window";
 	for(int i=0;i<strlen(s);i++){
 		namedWindow(s[i]+b,0);
+		//filter.generateControls(s, *whichSource(s[j])), this);
 	}
 	while(1){
 		int j=0;
@@ -147,3 +144,4 @@ Mat* KOCVStream::whichSource(char s){
 		return NULL;
 	}
 }
+

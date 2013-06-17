@@ -25,6 +25,7 @@ class KOCVStream{
 		Kinect kinect;
 		Filters filter;
 
+		//Constructor
 		KOCVStream(Kinect& kinect, 	Filters& filter);
 
 		//External Api

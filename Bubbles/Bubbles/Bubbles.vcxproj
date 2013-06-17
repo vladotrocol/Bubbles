@@ -50,12 +50,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\libs_home\opencv\build\include;C:\libs_home\Kinect\v1.7\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\libs_home\pthread\include;C:\libs_home\opencv\build\include;C:\libs_home\Kinect\v1.7\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\libs_home\opencv\build\x86\vc10\staticlib;C:\libs_home\opencv\build\x86\vc10\lib;C:\libs_home\Kinect\v1.7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\libs_home\pthread\lib;C:\libs_home\opencv\build\x86\vc10\staticlib;C:\libs_home\opencv\build\x86\vc10\lib;C:\libs_home\Kinect\v1.7\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>C:\libs_home\Kinect\v1.7\lib\x86\Kinect10.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_calib3d245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_contrib245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_core245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_core245.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_features2d245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_flann245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_gpu245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_haartraining_engined.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_highgui245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_highgui245.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_imgproc245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_legacy245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_ml245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_nonfree245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_objdetect245d.lib;C:\libs_home\opencv\build\x86\vc10\lib\opencv_video245d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -77,12 +77,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BubbleDetector.cpp" />
+    <ClCompile Include="BubbleState.cpp" />
     <ClCompile Include="Filters.cpp" />
     <ClCompile Include="Kinect.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="KOCVStream.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bubble.h" />
+    <ClInclude Include="BubbleDetector.h" />
+    <ClInclude Include="BubbleState.h" />
     <ClInclude Include="Filters.h" />
     <ClInclude Include="Kinect.h" />
     <ClInclude Include="KOCVStream.h" />

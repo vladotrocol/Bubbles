@@ -19,11 +19,13 @@
 using namespace std;
 
 int main(){
-	Kinect K;
-	Filters F;
-	cout<<K.initialiseKinect()<<'\n';
-	KOCVStream STREAM(K,F);
-	STREAM.display("dei");
+//	Kinect K;
+//	Filters F;
+//	cout<<K.initialiseKinect()<<'\n';
+//	KOCVStream STREAM(K,F);
+//	STREAM.display("dei");
+	BubbleDetector B;
+	B.init();
 	cin.get();
 	return 0;
 }

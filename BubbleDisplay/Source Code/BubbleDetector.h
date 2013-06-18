@@ -18,5 +18,5 @@ class BubbleDetector: public IBubbleDetector{
 		bool start(void);
 		void run(void);
 		bool stop(void);
-		void getContours(Filters F, Mat src);
+		void getContours(Filters filter, Mat src);
 };

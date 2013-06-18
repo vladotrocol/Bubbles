@@ -10,7 +10,12 @@ bool BubbleDetector::init(){
 	Filters filter;
 	bool ki = kinect.initialiseKinect();
 	cout<<"Kinect: "<<ki<<'\n';
-	KOCVStream STREAMS(kinect,filter);
+	KOCVStream STREAM(kinect,filter);
+	namedWindow("Contours", CV_WINDOW_AUTOSIZE );
+	while(1){
+		STREAM.readFrame('d');
+		getContours(filter, STREAM.depth_src);
+	}
 	return true;
 };
 
@@ -26,7 +31,8 @@ bool BubbleDetector::stop(){
 };
 
 
-/*void BubbleDetector::getContours(Mat src){
+void BubbleDetector::getContours(Filters filter, Mat src){
+	RNG rng(12345);
 	vector<vector<Point>> contours;
 	vector<Vec4i> hier;
 	findContours(filter.applyFilter('t',src), contours, hier, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
@@ -55,6 +61,6 @@ bool BubbleDetector::stop(){
      }
 
   /// Show in a window
-  namedWindow( "Contours", CV_WINDOW_AUTOSIZE );
-  imshow( "Contours", drawing );
-};*/
+	imshow( "Contours", drawing );
+	waitKey(100);
+};

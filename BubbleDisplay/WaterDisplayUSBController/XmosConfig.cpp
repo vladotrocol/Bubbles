@@ -2,6 +2,7 @@
 #include "./WaterDisplayUSBController/COMToolkit.h"
 #include <iostream>
 #include <conio.h>
+#include "sleep.h"
 
 static const char  port[]="COM4";
 static const char XMOS_PROGRAM[]="\"C:\\Program Files (x86)\\XMOS\\DevelopmentTools\\11.11.0\\bin\\run.bat\"";
@@ -9,7 +10,7 @@ using namespace std;
 
 
 void XmosConfig::awaitSyncSignal(){
-	Sleep(1);
+	usleep(1);
 	COMToolkit::awaitSyncSignal();
 }
 

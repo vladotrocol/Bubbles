@@ -53,13 +53,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(WD_LIBS_HOME)\opencv\build\include\;$(WD_LIBS_HOME)\sleep;$(WD_LIBS_HOME)\pthread\include;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OIS;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost;$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(WD_LIBS_HOME)\Kinect\v1.7\inc;$(WD_LIBS_HOME)\opencv\build\include\;$(WD_LIBS_HOME)\sleep;$(WD_LIBS_HOME)\pthread\include;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OIS;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost;$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opencv_calib3d240d.lib;opencv_contrib240d.lib;opencv_core240d.lib;opencv_features2d240d.lib;opencv_flann240d.lib;opencv_gpu240d.lib;opencv_haartraining_engined.lib;opencv_highgui240d.lib;opencv_imgproc240d.lib;opencv_legacy240d.lib;opencv_nonfree240d.lib;opencv_ml240d.lib;opencv_objdetect240d.lib;opencv_photo240d.lib;opencv_stitching240d.lib;opencv_video240d.lib;opencv_videostab240d.lib;pthreadVC2.lib;pthreadVSE2.lib;OgreMain_d.lib;OIS_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <AdditionalLibraryDirectories>$(WD_LIBS_HOME)\opencv\build\x86\vc10\lib;$(WD_LIBS_HOME)\tbb40_20120408oss\lib\ia32\vc10;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost\lib;$(WD_LIBS_HOME)\pthread\lib;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug\opt;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(WD_LIBS_HOME)\Kinect\v1.7\lib;$(WD_LIBS_HOME)\opencv\build\x86\vc10\lib;$(WD_LIBS_HOME)\tbb40_20120408oss\lib\ia32\vc10;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost\lib;$(WD_LIBS_HOME)\pthread\lib;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug\opt;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -97,7 +97,14 @@
     <ClCompile Include="DisplayKernel\OgreUtils\CameraOISController.cpp" />
     <ClCompile Include="ImageProceser\ImageProcesser.cpp" />
     <ClCompile Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source Code\BubbleDetector.cpp" />
+    <ClCompile Include="Source Code\BubbleState.cpp" />
+    <ClCompile Include="Source Code\BubbleTracker.cpp" />
+    <ClCompile Include="Source Code\Filters.cpp" />
+    <ClCompile Include="Source Code\Kinect.cpp" />
+    <ClCompile Include="Source Code\KOCVStream.cpp" />
+    <ClCompile Include="Source Code\Main.cpp" />
+    <ClCompile Include="Source Code\ProjectionEngine.cpp" />
     <ClCompile Include="WaterDisplayUSBController\COMToolkit.cpp" />
     <ClCompile Include="WaterDisplayUSBController\WDDLayer.cpp" />
     <ClCompile Include="WaterDisplayUSBController\XmosConfig.cpp" />
@@ -123,6 +130,15 @@
     <ClInclude Include="DisplayKernel\OgreUtils\ViewportData.h" />
     <ClInclude Include="ImageProceser\ImageProcesser.h" />
     <ClInclude Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.h" />
+    <ClInclude Include="Source Code\Bubble.h" />
+    <ClInclude Include="Source Code\BubbleDetector.h" />
+    <ClInclude Include="Source Code\BubbleGenerator.h" />
+    <ClInclude Include="Source Code\BubbleState.h" />
+    <ClInclude Include="Source Code\BubbleTracker.h" />
+    <ClInclude Include="Source Code\Filters.h" />
+    <ClInclude Include="Source Code\Kinect.h" />
+    <ClInclude Include="Source Code\KOCVStream.h" />
+    <ClInclude Include="Source Code\ProjectionEngine.h" />
     <ClInclude Include="WaterDisplayUSBController\COMToolkit.h" />
     <ClInclude Include="WaterDisplayUSBController\WDDLayer.h" />
     <ClInclude Include="WaterDisplayUSBController\XmosConfig.h" />

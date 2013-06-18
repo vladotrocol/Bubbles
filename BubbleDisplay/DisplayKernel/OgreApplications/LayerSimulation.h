@@ -3,7 +3,6 @@
  
 #include "./DisplayKernel/OgreApplications/BaseApplication.h"
 #include "./DisplayKernel/OgreUtils/CameraOISController.h"
-#include "./DisplayKernel/InputSubsystem/InputManager.h"
 #include "./WaterDisplay/WaterLayerInfo.h"
 
 class LayerApplication : public BaseApplication, Ogre::RenderTargetListener

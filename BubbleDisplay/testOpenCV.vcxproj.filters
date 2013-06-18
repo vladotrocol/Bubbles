@@ -76,9 +76,6 @@
     <ClCompile Include="CallibrationEngine\IEventProducer.cpp">
       <Filter>CallibrationEngine\Interaction</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WaterDisplayUSBController\WDDLayer.cpp">
       <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
     </ClCompile>
@@ -99,6 +96,30 @@
     </ClCompile>
     <ClCompile Include="DisplayKernel\OgreApplications\VideoPlayer.cpp">
       <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\BubbleDetector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\BubbleState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\BubbleTracker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\Filters.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\Kinect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\KOCVStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\ProjectionEngine.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +194,33 @@
     </ClInclude>
     <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h">
       <Filter>DisplayKernel\OgreApplications</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\Bubble.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleDetector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleGenerator.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleState.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleTracker.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\Filters.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\Kinect.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\KOCVStream.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\ProjectionEngine.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

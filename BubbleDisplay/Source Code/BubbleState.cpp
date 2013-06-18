@@ -18,7 +18,7 @@ unsigned int BubbleState::getUnknownBubble(void){
 	return b.ID;
 };
 
-void BubbleState::updateBubble(unsigned int ID, int x, int y, int z){
+void BubbleState::updateBubble(unsigned int ID, float x, float y, float z){
 
 };
 

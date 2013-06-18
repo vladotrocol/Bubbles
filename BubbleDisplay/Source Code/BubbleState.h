@@ -31,7 +31,7 @@ class BubbleState: public IBubbleState{
 		static BubbleState& instance(void);
 		void addBubble(Bubble b);
 		unsigned int getUnknownBubble(void);
-		void updateBubble(unsigned int ID, int x, int y, int z);
+		void updateBubble(unsigned int ID, float x, float y, float z);
 		map<unsigned int, Bubble> getCurrentState(void);
 		void notifyUserBreaks(unsigned int ID);
 		void notifyTrackingFrame(void);

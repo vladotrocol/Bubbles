@@ -14,16 +14,16 @@
 #include <opencv2/highgui/highgui.hpp>
 
 #include <iostream>
-#include "KOCVStream.h"
+#include "BubbleDetector.h"
 
 using namespace std;
 
 int main(){
 	Kinect K;
 	Filters F;
-	cout<<K.initialiseKinect();
-	KOCVStream STREAMS(K,F);
-	STREAMS.display("dt");
+	cout<<K.initialiseKinect()<<'\n';
+	KOCVStream STREAM(K,F);
+	STREAM.display("de");
 	cin.get();
 	return 0;
 }

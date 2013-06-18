@@ -195,32 +195,32 @@
     <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h">
       <Filter>DisplayKernel\OgreApplications</Filter>
     </ClInclude>
-    <ClInclude Include="Source Code\Bubble.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source Code\BubbleDetector.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source Code\BubbleGenerator.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source Code\Bubble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleDetector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Source Code\BubbleState.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\BubbleTracker.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\Filters.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\Kinect.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\KOCVStream.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\ProjectionEngine.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

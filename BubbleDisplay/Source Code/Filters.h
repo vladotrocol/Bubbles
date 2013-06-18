@@ -24,9 +24,10 @@ class IFilters{
 
 class Filters: public IFilters {
 	public:
-		bool thresholdOn;
-		bool erosionOn;
-		bool dilationOn;
+		int thresholdValue;
+		int thresholdType;
+		int erosionSize;
+		int dilationSize;
 
 		Filters(void);
 		Mat applyFilter(char s, Mat src);

@@ -40,5 +40,6 @@ class KOCVStream{
 		int whichDataType(char s);
 		Mat* whichSource(char s);
 		void generateWindows(char* s);
+		void generateControls(void);
 		
 };

@@ -3,13 +3,12 @@
 char* trackbar_type = "Type: \n 0: Binary \n 1: Binary Inverted \n 2: Truncate \n 3: To Zero \n 4: To Zero Inverted";
 char* trackbar_value = "Value";
 
-int threshold_value = 1;
-int threshold_type = THRESH_BINARY_INV;
-
 //Constructor
-Filters::Filters():thresholdOn(false),
-	erosionOn(false),
-	dilationOn(false)
+Filters::Filters():
+	thresholdValue(1),
+	thresholdType(1),
+	erosionSize(10),
+	dilationSize(10)
 {};
 
 
@@ -30,15 +29,11 @@ Mat Filters::applyFilter(char s, Mat src){
 Mat Filters::thresholdFilter(Mat src){
 	Mat src_grey, result;
 	if(src.type() == CV_8U){
-		threshold_value = 1;
-		threshold_type = THRESH_BINARY_INV;
-		threshold(src, result, threshold_value, 255, threshold_type);
+		threshold(src, result, thresholdValue, 255, thresholdType);
 	}
 	else{
-		threshold_value = 50;
-		threshold_type = THRESH_BINARY;
 		cvtColor(src, src_grey, CV_BGR2GRAY);
-		threshold(src_grey, result, threshold_value, 255, threshold_type);
+		threshold(src_grey, result, thresholdValue, 255, thresholdType);
 	}
 	return result;
 };
@@ -46,7 +41,10 @@ Mat Filters::thresholdFilter(Mat src){
 //Apply Erosion Filter
 Mat Filters::erosionFilter(Mat src){
 	Mat result;
-	Mat element = getStructuringElement(cv::MORPH_RECT, cv::Size(10, 10), Point(2,2));
+	if(erosionSize<=2){
+		erosionSize=3;
+	}
+	Mat element = getStructuringElement(cv::MORPH_RECT, cv::Size(erosionSize, erosionSize), Point(2,2));
 	erode( src, result, element );
 	return result;
 };
@@ -54,7 +52,10 @@ Mat Filters::erosionFilter(Mat src){
 //Apply Dilation Filter
 Mat Filters::dilationFilter(Mat src){
 	Mat result;
-	Mat element = getStructuringElement(cv::MORPH_RECT, cv::Size(10, 10), Point(2,2));
+	if(dilationSize<=2){
+		dilationSize=3;
+	}
+	Mat element = getStructuringElement(cv::MORPH_RECT, cv::Size(dilationSize, dilationSize), Point(2,2));
 	dilate( src, result, element );
 	return result;
 };

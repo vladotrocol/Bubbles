@@ -57,7 +57,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_calib3d240d.lib;opencv_contrib240d.lib;opencv_core240d.lib;opencv_features2d240d.lib;opencv_flann240d.lib;opencv_gpu240d.lib;opencv_haartraining_engined.lib;opencv_highgui240d.lib;opencv_imgproc240d.lib;opencv_legacy240d.lib;opencv_nonfree240d.lib;opencv_ml240d.lib;opencv_objdetect240d.lib;opencv_photo240d.lib;opencv_stitching240d.lib;opencv_video240d.lib;opencv_videostab240d.lib;pthreadVC2.lib;pthreadVSE2.lib;OgreMain_d.lib;OIS_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(WD_LIBS_HOME)\Kinect\v1.7\lib\x86\Kinect10.lib;opencv_calib3d240d.lib;opencv_contrib240d.lib;opencv_core240d.lib;opencv_features2d240d.lib;opencv_flann240d.lib;opencv_gpu240d.lib;opencv_haartraining_engined.lib;opencv_highgui240d.lib;opencv_imgproc240d.lib;opencv_legacy240d.lib;opencv_nonfree240d.lib;opencv_ml240d.lib;opencv_objdetect240d.lib;opencv_photo240d.lib;opencv_stitching240d.lib;opencv_video240d.lib;opencv_videostab240d.lib;pthreadVC2.lib;pthreadVSE2.lib;OgreMain_d.lib;OIS_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalLibraryDirectories>$(WD_LIBS_HOME)\Kinect\v1.7\lib;$(WD_LIBS_HOME)\opencv\build\x86\vc10\lib;$(WD_LIBS_HOME)\tbb40_20120408oss\lib\ia32\vc10;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\boost\lib;$(WD_LIBS_HOME)\pthread\lib;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug\opt;$(WD_LIBS_HOME)\Ogre\OgreSDK_vc10_v1-8-0\lib\debug</AdditionalLibraryDirectories>
     </Link>

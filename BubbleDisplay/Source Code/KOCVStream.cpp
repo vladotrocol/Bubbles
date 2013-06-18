@@ -10,6 +10,7 @@ KOCVStream::KOCVStream(Kinect& k, Filters& filter):kinect(k)
 //FLAG grammar is: ((r||d)(t||e||i)*)*
 void KOCVStream::display(char* s){
 	string b = "_window_";
+	generateControls();
 	generateWindows(s);
 	while(1){
 		int j=0;
@@ -142,6 +143,8 @@ Mat* KOCVStream::whichSource(char s){
 	}
 };
 
+
+//Generates windows according to grammar
 void KOCVStream::generateWindows(char* s){
 string b = "_window_";
 	int j=0;
@@ -160,4 +163,20 @@ string b = "_window_";
 			}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
 			j=i;
 		}	
+};
+
+void KOCVStream::generateControls(){
+	namedWindow("Controls", CV_WINDOW_AUTOSIZE);
+	cvCreateTrackbar( "ThreValue", "Controls",
+                  &(filter.thresholdValue), 255,
+                  NULL);
+	cvCreateTrackbar("ThreType","Controls",
+				  &filter.thresholdType,
+                  4, NULL);
+	cvCreateTrackbar("EroSize","Controls",
+				  &filter.erosionSize,
+                  200, NULL);
+	cvCreateTrackbar("DilSize","Controls",
+				  &filter.dilationSize,
+                  200, NULL);
 };

@@ -23,7 +23,7 @@ int main(){
 	Filters F;
 	cout<<K.initialiseKinect()<<'\n';
 	KOCVStream STREAM(K,F);
-	STREAM.display("de");
+	STREAM.display("dei");
 	cin.get();
 	return 0;
 }

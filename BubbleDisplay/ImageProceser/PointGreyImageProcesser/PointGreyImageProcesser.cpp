@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <sys/timeb.h>
 #include <memory.h>
+#include "sleep.h"
 #include "CallibrationEngine\IClock.h"
 
 
@@ -44,14 +45,11 @@ void* fwthreadFunction(void* a);//Helper function to create the thread
 	void PointGreyImageProcesser::run(){
 		//Thread's main loop
 		while(status==ST_PLAYING || status==ST_PAUSE){
-				if(status==ST_PAUSE){
-					Sleep(5);//Do nothing while paused. 
-					continue;
-				}
+
 				//Do your processing
 				this->updateFPS(true);
 				//Leave the processor (do this always! You have to let other threads get the processor)
-				Sleep(1);
+				usleep(1);
 			}
 		//The status says we have to end
 		Sleep(1000);//Keep it		
@@ -83,12 +81,15 @@ void* fwthreadFunction(void* a);//Helper function to create the thread
 	}
 		
 	cv::Mat PointGreyImageProcesser::getImage(){
-		//This lock we use it as a flag: Is the capture Started? Do not let me through otherwise
-		pthread_mutex_lock(&captureStarted);			
-		pthread_mutex_unlock(&captureStarted);			
-		//This lock we use it to get mutual exclusion
+		//This lock we use it as a FLAG: Is the capture Started? Do not let me through otherwise
+		pthread_mutex_lock(&captureStarted);//GET-RELEASE-DO			
+		pthread_mutex_unlock(&captureStarted);		
+		//body
+		
+		
+		//This lock we use it to get MUTUAL EXCLUSION GET-DO-RELEASE
 		pthread_mutex_lock(&mutex);//Entering M.E.
-		//Do something with mutual exclusion
+		//body
 		pthread_mutex_unlock(&mutex);//Leaving M.E.
 		return cv::Mat();//copy lattest image.		
 	}

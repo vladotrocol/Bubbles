@@ -11,6 +11,7 @@
 #include <string>
 #include "Kinect.h"
 #include "Filters.h"
+#include "BubbleState.h"
 
 #define width 640 
 #define height 480
@@ -31,6 +32,7 @@ class KOCVStream{
 		//External Api
 		void display(char* s);
 		void readFrame(char s);
+		void displayBubbles(vector<Bubble> bubbles);
 
 	private:
 		//Internal
@@ -40,6 +42,5 @@ class KOCVStream{
 		int whichDataType(char s);
 		Mat* whichSource(char s);
 		void generateWindows(char* s);
-		void generateControls(void);
-		
+		void generateControls(void);	
 };

@@ -4,18 +4,9 @@
 BubbleDetector::BubbleDetector()
 {};
 
-
 bool BubbleDetector::init(){
-	Kinect kinect;
-	Filters filter;
 	bool ki = kinect.initialiseKinect();
 	cout<<"Kinect: "<<ki<<'\n';
-	KOCVStream STREAM(kinect,filter);
-	namedWindow("Contours", CV_WINDOW_AUTOSIZE );
-	while(1){
-		STREAM.readFrame('d');
-		getContours(filter, STREAM.depth_src);
-	}
 	return true;
 };
 
@@ -24,43 +15,79 @@ bool BubbleDetector::start(){
 };
 
 void BubbleDetector::run(){
+	KOCVStream STREAM(kinect,filter);
+	namedWindow("Contours", 0);
+	while(1){
+		STREAM.readFrame('d');
+		Bubbles = detectBubbles(filter, STREAM.depth_src);
+		STREAM.display("dti");
+		STREAM.displayBubbles(Bubbles);
+		char c = waitKey( 20 );
+
+		//If escape is pressed exit
+		if( (char)c == 27 ){
+			break; 
+		}
+	}
 };
 
 bool BubbleDetector::stop(){
 	return true;
 };
 
-
-void BubbleDetector::getContours(Filters filter, Mat src){
-	RNG rng(12345);
+vector<Bubble> BubbleDetector::detectBubbles(Filters filter, Mat src){
 	vector<vector<Point>> contours;
 	vector<Vec4i> hier;
 	findContours(filter.applyFilter('t',src), contours, hier, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
 
-	/// Approximate contours to polygons + get bounding rects and circles
-  vector<vector<Point> > contours_poly( contours.size() );
-  vector<Rect> boundRect( contours.size() );
-  vector<Point2f>center( contours.size() );
-  vector<float>radius( contours.size() );
+	vector<Bubble> bubbles (contours.size());
+	vector<vector<Point>> contours_poly(contours.size());
 
-  for( int i = 0; i < contours.size(); i++ )
-     { approxPolyDP( Mat(contours[i]), contours_poly[i], 3, true );
-       boundRect[i] = boundingRect( Mat(contours_poly[i]) );
-       minEnclosingCircle( (Mat)contours_poly[i], center[i], radius[i] );
-     }
+	if(contours.size() < 1){
+		cout << "No Bubbles in frame\n";
+	}
+	else{
+		for (int i = 0; i < contours.size(); i++){
+			if (contourArea(contours[i]) > 10){
+				approxPolyDP(Mat(contours[i]), contours_poly[i], 3, true);
+				minEnclosingCircle( (Mat)contours_poly[i], bubbles[i].center, bubbles[i].radius);
+			}
+		}
+	}
 
-
-  /// Draw polygonal contour + bonding rects + circles
-  Mat drawing = Mat::zeros( filter.applyFilter('t',src).size(), CV_8UC3 );
-  for( int i = 0; i< contours.size(); i++ )
-     {
-       Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-       drawContours( drawing, contours_poly, i, color, 1, 8, vector<Vec4i>(), 0, Point() );
-       rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0 );
-       circle( drawing, center[i], (int)radius[i], color, 2, 8, 0 );
-     }
-
-  /// Show in a window
-	imshow( "Contours", drawing );
-	waitKey(100);
+	for (int i = 0; i < bubbles.size(); i++){
+		if (bubbles[i].radius < minBubbleSize || bubbles[i].radius > maxBubbleSize || bubbles[i].center.x < 50){
+			bubbles.erase(bubbles.begin() + i);
+			i--;
+		}
+	}
+	return bubbles;
 };
+
+void BubbleDetector::updateFPS(bool newFrame){
+		static Ogre::Timer timer;
+		static bool firstTime=true;
+		static float lastSecond;
+		static int imagesSinceLastSecond;
+		static int cyclesSinceLastSecond;
+		static const int measureOverNSeconds=15; //We print it over 5 seconds....
+		float curSecond;
+		float curTime=((float)(timer.getMicroseconds()+1)/1000000);
+		//0. Initialize clock
+		if(firstTime){
+			timer.reset();
+			imagesSinceLastSecond=cyclesSinceLastSecond=0;
+			lastSecond=curSecond=1.0f*static_cast<int>(curTime);
+			firstTime=false;
+		}
+		//1. Update number of images and cycles since last second
+		cyclesSinceLastSecond++;
+		if(newFrame)imagesSinceLastSecond++;	
+		//2. Determine in the second is finished and notify if necessary
+		curSecond=static_cast<int>(curTime);
+		if(curSecond>=lastSecond+measureOverNSeconds){
+			printf("%d", cyclesSinceLastSecond);
+			imagesSinceLastSecond=cyclesSinceLastSecond=0;lastSecond=curSecond;
+		}	
+			
+	}

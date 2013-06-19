@@ -12,30 +12,24 @@ void KOCVStream::display(char* s){
 	string b = "_window_";
 	generateControls();
 	generateWindows(s);
-	while(1){
-		int j=0;
-		while(j<strlen(s)){
-			if(s[j]=='r'||s[j]=='d'){
-				readFrame(s[j]);
-			}
-			else{
-				cerr<<"Some flag error in display function";
-				break;
-			}
-			int i=j;
-			do{
-				imshow(s[j]+b+s[i], filter.applyFilter(s[i],*whichSource(s[j])));
-				waitKey( 20 );
-				i++;
-			}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
-			j=i;
-		}	
-		char c = waitKey( 20 );
-		//If escape is pressed exit
-		if( (char)c == 27 ){
-			break; 
-		}	
-	}
+	int j=0;
+	while(j<strlen(s)){
+		if(s[j]=='r'||s[j]=='d'){
+			readFrame(s[j]);
+		}
+		else{
+			cerr<<"Some flag error in display function";
+			break;
+		}
+		int i=j;
+		do{
+			imshow(s[j]+b+s[i], filter.applyFilter(s[i],*whichSource(s[j])));
+			waitKey( 20 );
+			i++;
+		}while(s[i]!='r'&&s[i]!='d'&&i<strlen(s));
+		j=i;
+	}	
+	char c = waitKey( 20 );
 };
 
 //Reads the current frames into the source materials
@@ -50,6 +44,18 @@ void KOCVStream::readFrame(char s){
 		temp.copyTo(depth_src);
 	}
 	temp.release();
+};
+
+void KOCVStream::displayBubbles(vector<Bubble> bubbles){
+	RNG rng(12345);
+	Mat drawing = Mat::zeros(depth_src.size(), CV_8UC3 );
+	for( int i = 0; i< bubbles.size(); i++ ){
+		Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+        circle( drawing, bubbles[i].center, (int)bubbles[i].radius, color, 2, 8, 0 );
+    }
+    namedWindow( "Contours", CV_WINDOW_AUTOSIZE );
+    imshow( "Contours", drawing );
+    cvWaitKey(10);
 };
 
 //--------------------------Internal----------------------------
@@ -165,6 +171,8 @@ string b = "_window_";
 		}	
 };
 
+
+//Generates the window with the filter sliders
 void KOCVStream::generateControls(){
 	namedWindow("Controls", CV_WINDOW_AUTOSIZE);
 	cvCreateTrackbar( "ThreValue", "Controls",

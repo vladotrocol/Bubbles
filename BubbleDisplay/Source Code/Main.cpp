@@ -26,6 +26,6 @@ int main(){
 //	STREAM.display("dei");
 	BubbleDetector B;
 	B.init();
-	cin.get();
+	B.run();
 	return 0;
 }

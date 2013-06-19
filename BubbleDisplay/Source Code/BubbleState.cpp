@@ -24,7 +24,7 @@ unsigned int BubbleState::getUnknownBubble(void){
 
 //Update the position of a bubble
 void BubbleState::updateBubble(unsigned int ID, float x, float y, float z){
-	trackedBubbles[ID].center = Point3f(x,y,z);
+	trackedBubbles[ID].center = Point2f(x,y);
 };
 
 //Returns a copy of all tracked bubles

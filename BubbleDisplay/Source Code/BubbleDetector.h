@@ -1,6 +1,13 @@
 #include <iostream>
-#include "BubbleState.h"
 #include "KOCVStream.h"
+#include <assert.h>
+#include <stdio.h>
+#include <sys/timeb.h>
+#include <memory.h>
+#include "sleep.h"
+#include <string>
+#include <vector>
+#include <pthread.h>
 
 class IBubbleDetector{
 	public:
@@ -10,13 +17,21 @@ class IBubbleDetector{
 		virtual bool stop(void)=0;
 };
 
+#define minBubbleSize 10
+#define maxBubbleSize 100
+
 class BubbleDetector: public IBubbleDetector{
 
 	public:
+		vector<Bubble> Bubbles;
+		Filters filter;
+		Kinect kinect;
+
 		BubbleDetector(void);
 		bool init(void);
 		bool start(void);
 		void run(void);
 		bool stop(void);
-		void getContours(Filters filter, Mat src);
+		vector<Bubble> detectBubbles(Filters filter, Mat src);
+		void updateFPS(bool newFrame);
 };

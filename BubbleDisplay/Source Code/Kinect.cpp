@@ -21,7 +21,7 @@ bool Kinect::initialiseKinect(void){
 //Get the next frame
 bool Kinect::hasNextFrame(char s, NUI_IMAGE_FRAME *imageFrame){
 	HANDLE stream = whichStream(s);
-	if(stream!=NULL){
+	if(stream){
 		if(sensor->NuiImageStreamGetNextFrame(stream, 10, imageFrame) >= 0){
 			return true;
 		}

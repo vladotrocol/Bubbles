@@ -19,7 +19,7 @@ Mat Filters::applyFilter(char s, Mat src){
 	}else if(s == 'e'){
 		return erosionFilter(thresholdFilter(src));
 	}else if(s == 'i'){
-		return dilationFilter(thresholdFilter(src));
+		return dilationFilter(erosionFilter(thresholdFilter(src)));
 	}else{
 		return src;
 	}

@@ -91,9 +91,6 @@
     <ClCompile Include="CallibrationEngine\Homography.cpp">
       <Filter>CallibrationEngine\Homographies</Filter>
     </ClCompile>
-    <ClCompile Include="CallibrationEngine\IClock.cpp">
-      <Filter>CallibrationEngine\Clock</Filter>
-    </ClCompile>
     <ClCompile Include="DisplayKernel\OgreApplications\VideoPlayer.cpp">
       <Filter>DisplayKernel\OgreApplications</Filter>
     </ClCompile>
@@ -119,6 +116,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source Code\ProjectionEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CallibrationEngine\IClock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -189,9 +189,6 @@
     <ClInclude Include="CallibrationEngine\Homography.h">
       <Filter>CallibrationEngine\Homographies</Filter>
     </ClInclude>
-    <ClInclude Include="CallibrationEngine\IClock.h">
-      <Filter>CallibrationEngine\Clock</Filter>
-    </ClInclude>
     <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h">
       <Filter>DisplayKernel\OgreApplications</Filter>
     </ClInclude>
@@ -220,6 +217,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\ProjectionEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CallibrationEngine\IClock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

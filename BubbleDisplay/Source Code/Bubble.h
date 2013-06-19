@@ -4,7 +4,7 @@ using namespace cv;
 
 typedef struct {
 	unsigned int ID;
-	Point3f center;
+	Point2f center;
 	float radius;
 	float state;
 } Bubble;

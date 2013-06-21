@@ -46,15 +46,15 @@ void KOCVStream::readFrame(char s){
 	temp.release();
 };
 
-void KOCVStream::displayBubbles(vector<Bubble> bubbles){
+void KOCVStream::displayBubbles(vector<Bubble> &bubbles){
 	RNG rng(12345);
 	Mat drawing = Mat::zeros(depth_src.size(), CV_8UC3 );
 	for( int i = 0; i< bubbles.size(); i++ ){
 		Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+		if((int)bubbles[i].radius>0)
         circle( drawing, bubbles[i].center, (int)bubbles[i].radius, color, 2, 8, 0 );
     }
-    namedWindow( "Contours", CV_WINDOW_AUTOSIZE );
-    imshow( "Contours", drawing );
+    //imshow( "Contours", drawing );
     cvWaitKey(10);
 };
 

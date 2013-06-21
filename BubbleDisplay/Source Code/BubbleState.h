@@ -1,3 +1,6 @@
+#ifndef _BUBBLE_STATE_C
+#define _BUBBLE_STATE_C
+
 #include <iostream>
 #include <map>
 #include <queue>
@@ -10,7 +13,7 @@ class IBubbleState{
 	public:
 		virtual void addBubble(Bubble b)=0;
 		virtual unsigned int getUnknownBubble(void)=0;
-		virtual void updateBubble(unsigned int ID, float x, float y, float z)=0;
+		virtual void updateBubble(unsigned int ID, float x, float y)=0;
 		virtual map<unsigned int, Bubble> getCurrentState(void)=0;
 		virtual void notifyUserBreaks(unsigned int ID)=0;
 		virtual void notifyTrackingFrame(void)=0;
@@ -40,7 +43,7 @@ class BubbleState: public IBubbleState{
 		unsigned int getUnknownBubble(void);
 
 		//Update the position of a bubble
-		void updateBubble(unsigned int ID, float x, float y, float z);
+		void updateBubble(unsigned int ID, float x, float y);
 
 		//Returns a copy of all tracked bubles
 		map<unsigned int, Bubble> getCurrentState(void);
@@ -51,3 +54,5 @@ class BubbleState: public IBubbleState{
 		//Determines a tracking cycle (used for assuming if bubble broke)
 		void notifyTrackingFrame(void);
 };
+
+#endif

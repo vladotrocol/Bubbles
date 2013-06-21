@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <sys/timeb.h>
 #include <memory.h>
-#include "sleep.h"
+////#include "sleep.h"
 #include "CallibrationEngine\IClock.h"
 
 
@@ -49,7 +49,7 @@ void* fwthreadFunction(void* a);//Helper function to create the thread
 				//Do your processing
 				this->updateFPS(true);
 				//Leave the processor (do this always! You have to let other threads get the processor)
-				usleep(1);
+				Sleep(1);
 			}
 		//The status says we have to end
 		Sleep(1000);//Keep it		

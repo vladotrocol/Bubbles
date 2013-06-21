@@ -39,7 +39,7 @@ bool Kinect::releaseFrame(char s, NUI_IMAGE_FRAME *imageFrame){
 BYTE* Kinect::getDepthData(NUI_LOCKED_RECT *LockedRect){
 	BYTE data[width*height*3];
 	int j = 0;
-	const USHORT* curr = (const USHORT*) (*LockedRect).pBits;
+	const USHORT* curr = (const USHORT*) LockedRect->pBits;
 	const USHORT* dataEnd = curr + (width*height);
 	while (curr < dataEnd) {
 		USHORT depth = NuiDepthPixelToDepth(*curr++);
@@ -55,10 +55,10 @@ BYTE* Kinect::getDepthData(NUI_LOCKED_RECT *LockedRect){
 
 //Returns the requested stream
 HANDLE Kinect::whichStream(char s){
-	if(s =='r'){
+	if(s == 'r'){
 		return rgbStream;
 	}
-	else if(s =='d'){
+	else if(s == 'd'){
 		return depthStream;
 	}
 	else{

@@ -1,3 +1,6 @@
+#ifndef _KINECT_C
+#define _KINECT_C
+
 #include <iostream>
 #include <Windows.h>
 #include <Ole2.h>
@@ -28,3 +31,5 @@ class Kinect{
 		//Internal
 		HANDLE whichStream(char s);
 };
+
+#endif

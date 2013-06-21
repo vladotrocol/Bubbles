@@ -1,37 +1,66 @@
+#include "Ogre.h"
 #include "BubbleDetector.h"
 
 //Constructor
 BubbleDetector::BubbleDetector()
-{};
+{;};
+
+void* fwthreadFunction(void* a);//Helper function to create the thread
+
+
+void* fwthreadFunction(void* a){
+		BubbleDetector* p=((BubbleDetector*)a);
+		p->run();
+		return NULL;
+};
 
 bool BubbleDetector::init(){
 	bool ki = kinect.initialiseKinect();
 	cout<<"Kinect: "<<ki<<'\n';
+	status=ST_READY;
 	return true;
 };
 
 bool BubbleDetector::start(){
+	if(status==ST_READY){
+		status=ST_PLAYING;
+		pthread_create(&thread,NULL,fwthreadFunction,(void*)this);
+	}
 	return true;
 };
 
 void BubbleDetector::run(){
 	KOCVStream STREAM(kinect,filter);
-	namedWindow("Contours", 0);
-	while(1){
+	//Thread's main loop
+	while(status==ST_PLAYING){
+		//Do your processing
 		STREAM.readFrame('d');
 		Bubbles = detectBubbles(filter, STREAM.depth_src);
-		STREAM.display("dti");
+		//STREAM.display("dti");
 		STREAM.displayBubbles(Bubbles);
 		char c = waitKey( 20 );
+		this->updateFPS(true);
 
 		//If escape is pressed exit
 		if( (char)c == 27 ){
 			break; 
 		}
+
+		//Leave the processor (do this always! You have to let other threads get the processor)
+		Sleep(1);
 	}
+	//The status says we have to end
+	Sleep(1000);//Keep it	
 };
 
+
 bool BubbleDetector::stop(){
+	if(status!=ST_PLAYING)
+		return false;
+	status=ST_READY;
+	//await termination
+	void* result;
+	pthread_join(thread,&result);
 	return true;
 };
 
@@ -70,7 +99,7 @@ void BubbleDetector::updateFPS(bool newFrame){
 		static float lastSecond;
 		static int imagesSinceLastSecond;
 		static int cyclesSinceLastSecond;
-		static const int measureOverNSeconds=15; //We print it over 5 seconds....
+		static const int measureOverNSeconds=5; //We print it over 5 seconds....
 		float curSecond;
 		float curTime=((float)(timer.getMicroseconds()+1)/1000000);
 		//0. Initialize clock
@@ -86,7 +115,7 @@ void BubbleDetector::updateFPS(bool newFrame){
 		//2. Determine in the second is finished and notify if necessary
 		curSecond=static_cast<int>(curTime);
 		if(curSecond>=lastSecond+measureOverNSeconds){
-			printf("%d", cyclesSinceLastSecond);
+			cout<<cyclesSinceLastSecond<<'\n';
 			imagesSinceLastSecond=cyclesSinceLastSecond=0;lastSecond=curSecond;
 		}	
 			

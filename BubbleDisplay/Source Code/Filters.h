@@ -1,3 +1,6 @@
+#ifndef _FILTERS_C
+#define _FILTERS_C
+
 #include <iostream>
 #include <Windows.h>
 #include <Ole2.h>
@@ -35,3 +38,5 @@ class Filters: public IFilters {
 		Mat erosionFilter(Mat src);
 		Mat dilationFilter(Mat src);
 };
+
+#endif

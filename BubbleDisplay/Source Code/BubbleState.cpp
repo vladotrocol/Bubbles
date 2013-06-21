@@ -1,8 +1,8 @@
 #include "BubbleState.h"
 
 //Constructor
-BubbleState::BubbleState(){
-};
+BubbleState::BubbleState()
+{;};
 
 //Fake Contructor (Restricts to only one instance)
 BubbleState& BubbleState::instance(){
@@ -23,7 +23,7 @@ unsigned int BubbleState::getUnknownBubble(void){
 };
 
 //Update the position of a bubble
-void BubbleState::updateBubble(unsigned int ID, float x, float y, float z){
+void BubbleState::updateBubble(unsigned int ID, float x, float y){
 	trackedBubbles[ID].center = Point2f(x,y);
 };
 

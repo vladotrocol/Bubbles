@@ -49,9 +49,6 @@
     <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp">
-      <Filter>ImageProcesser\PointGreyImageProcesser</Filter>
-    </ClCompile>
     <ClCompile Include="ImageProceser\ImageProcesser.cpp">
       <Filter>ImageProcesser</Filter>
     </ClCompile>
@@ -123,9 +120,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.h">
-      <Filter>ImageProcesser\PointGreyImageProcesser</Filter>
-    </ClInclude>
     <ClInclude Include="ImageProceser\ImageProcesser.h">
       <Filter>ImageProcesser</Filter>
     </ClInclude>

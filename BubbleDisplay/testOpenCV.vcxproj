@@ -96,7 +96,6 @@
     <ClCompile Include="DisplayKernel\OgreUtils\CameraManager.cpp" />
     <ClCompile Include="DisplayKernel\OgreUtils\CameraOISController.cpp" />
     <ClCompile Include="ImageProceser\ImageProcesser.cpp" />
-    <ClCompile Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.cpp" />
     <ClCompile Include="Source Code\BubbleDetector.cpp" />
     <ClCompile Include="Source Code\BubbleState.cpp" />
     <ClCompile Include="Source Code\BubbleTracker.cpp" />
@@ -129,7 +128,6 @@
     <ClInclude Include="DisplayKernel\OgreUtils\CameraUtils.h" />
     <ClInclude Include="DisplayKernel\OgreUtils\ViewportData.h" />
     <ClInclude Include="ImageProceser\ImageProcesser.h" />
-    <ClInclude Include="ImageProceser\PointGreyImageProcesser\PointGreyImageProcesser.h" />
     <ClInclude Include="Source Code\Bubble.h" />
     <ClInclude Include="Source Code\BubbleDetector.h" />
     <ClInclude Include="Source Code\BubbleGenerator.h" />

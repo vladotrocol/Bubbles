@@ -1,3 +1,6 @@
+#ifndef _KOCVSTREAM_C
+#define _KOCVSTREAM_C
+
 #include <iostream>
 #include <Windows.h>
 #include <Ole2.h>
@@ -32,7 +35,7 @@ class KOCVStream{
 		//External Api
 		void display(char* s);
 		void readFrame(char s);
-		void displayBubbles(vector<Bubble> bubbles);
+		void displayBubbles(vector<Bubble>& bubbles);
 
 	private:
 		//Internal
@@ -44,3 +47,5 @@ class KOCVStream{
 		void generateWindows(char* s);
 		void generateControls(void);	
 };
+
+#endif

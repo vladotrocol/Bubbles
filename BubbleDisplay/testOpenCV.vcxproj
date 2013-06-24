@@ -85,7 +85,6 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CallibrationEngine\Homography.cpp" />
     <ClCompile Include="CallibrationEngine\IClock.cpp" />
     <ClCompile Include="CallibrationEngine\IEventProducer.cpp" />
     <ClCompile Include="CallibrationEngine\VariableParameter.cpp" />
@@ -99,6 +98,7 @@
     <ClCompile Include="Source Code\BubbleDetector.cpp" />
     <ClCompile Include="Source Code\BubbleState.cpp" />
     <ClCompile Include="Source Code\BubbleTracker.cpp" />
+    <ClCompile Include="Source Code\Calibrator.cpp" />
     <ClCompile Include="Source Code\Filters.cpp" />
     <ClCompile Include="Source Code\Kinect.cpp" />
     <ClCompile Include="Source Code\KOCVStream.cpp" />
@@ -110,7 +110,6 @@
     <ClCompile Include="WaterDisplayUSBController\XMOSControlPlugin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CallibrationEngine\Homography.h" />
     <ClInclude Include="CallibrationEngine\IClock.h" />
     <ClInclude Include="CallibrationEngine\IEventObserver.h" />
     <ClInclude Include="CallibrationEngine\IEventProducer.h" />
@@ -133,6 +132,7 @@
     <ClInclude Include="Source Code\BubbleGenerator.h" />
     <ClInclude Include="Source Code\BubbleState.h" />
     <ClInclude Include="Source Code\BubbleTracker.h" />
+    <ClInclude Include="Source Code\Calibrator.h" />
     <ClInclude Include="Source Code\Filters.h" />
     <ClInclude Include="Source Code\Kinect.h" />
     <ClInclude Include="Source Code\KOCVStream.h" />

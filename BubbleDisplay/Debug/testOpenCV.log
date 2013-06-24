@@ -1,49 +1,15 @@
-﻿Build started 6/21/2013 3:37:54 PM.
+﻿Build started 6/24/2013 5:30:43 PM.
      1>Project "D:\Projects\Bubbles\BubbleDisplay\testOpenCV.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\BubblesDisplay.unsuccessfulbuild".
+         Creating "Debug\BubblesDisplay.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         d:\Tools\VSStudio\VC\bin\CL.exe /c /Ic:\libs_home\Kinect\v1.7\inc /Ic:\libs_home\opencv\build\include\ /Ic:\libs_home\sleep /Ic:\libs_home\pthread\include /I"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\include\OIS" /I"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\include\OGRE" /I"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\boost" /ID:\Projects\Bubbles\BubbleDisplay\ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "Source Code\BubbleDetector.cpp" "Source Code\BubbleTracker.cpp" "Source Code\Main.cpp"
-         Main.cpp
-         BubbleTracker.cpp
-         BubbleDetector.cpp
-     1>d:\projects\bubbles\bubbledisplay\source code\bubbledetector.cpp(79): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\projects\bubbles\bubbledisplay\source code\bubbledetector.cpp(87): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\projects\bubbles\bubbledisplay\source code\bubbledetector.cpp(116): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-         Generating Code...
+         All outputs are up-to-date.
        ManifestResourceCompile:
          All outputs are up-to-date.
        Link:
-         d:\Tools\VSStudio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projects\Bubbles\BubbleDisplay\Debug\BubblesDisplay.exe" /INCREMENTAL /NOLOGO /LIBPATH:c:\libs_home\Kinect\v1.7\lib /LIBPATH:c:\libs_home\opencv\build\x86\vc10\lib /LIBPATH:c:\libs_home\tbb40_20120408oss\lib\ia32\vc10 /LIBPATH:"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\boost\lib" /LIBPATH:c:\libs_home\pthread\lib /LIBPATH:"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\lib\debug\opt" /LIBPATH:"c:\libs_home\Ogre\OgreSDK_vc10_v1-8-0\lib\debug" c:\libs_home\Kinect\v1.7\lib\x86\Kinect10.lib opencv_calib3d240d.lib opencv_contrib240d.lib opencv_core240d.lib opencv_features2d240d.lib opencv_flann240d.lib opencv_gpu240d.lib opencv_haartraining_engined.lib opencv_highgui240d.lib opencv_imgproc240d.lib opencv_legacy240d.lib opencv_nonfree240d.lib opencv_ml240d.lib opencv_objdetect240d.lib opencv_photo240d.lib opencv_stitching240d.lib opencv_video240d.lib opencv_videostab240d.lib pthreadVC2.lib pthreadVSE2.lib OgreMain_d.lib OIS_d.lib opencv_calib3d240d.lib opencv_contrib240d.lib opencv_core240d.lib opencv_features2d240d.lib opencv_flann240d.lib opencv_gpu240d.lib opencv_haartraining_engined.lib opencv_highgui240d.lib opencv_imgproc240d.lib opencv_legacy240d.lib opencv_nonfree240d.lib opencv_ml240d.lib opencv_objdetect240d.lib opencv_photo240d.lib opencv_stitching240d.lib opencv_video240d.lib opencv_videostab240d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\BubblesDisplay.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Projects\Bubbles\BubbleDisplay\Debug\BubblesDisplay.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projects\Bubbles\BubbleDisplay\Debug\BubblesDisplay.lib" /MACHINE:X86 Debug\BubblesDisplay.exe.embed.manifest.res
-         Debug\Homography.obj
-         Debug\IClock.obj
-         Debug\IEventProducer.obj
-         Debug\VariableParameter.obj
-         Debug\VariableParameterEventObserver.obj
-         Debug\BaseApplication.obj
-         Debug\CompositeOgreApplication.obj
-         Debug\VideoPlayer.obj
-         Debug\CameraManager.obj
-         Debug\CameraOISController.obj
-         Debug\ImageProcesser.obj
-         Debug\BubbleDetector.obj
-         Debug\BubbleState.obj
-         Debug\BubbleTracker.obj
-         Debug\Filters.obj
-         Debug\Kinect.obj
-         Debug\KOCVStream.obj
-         Debug\Main.obj
-         Debug\ProjectionEngine.obj
-         Debug\COMToolkit.obj
-         Debug\WDDLayer.obj
-         Debug\XmosConfig.obj
-         Debug\XMOSControlPlugin.obj
+         All outputs are up-to-date.
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\BubblesDisplay.exe.embed.manifest" /manifest Debug\BubblesDisplay.exe.intermediate.manifest
          All outputs are up-to-date.
-       LinkEmbedManifest:
-         All outputs are up-to-date.
-         testOpenCV.vcxproj -> D:\Projects\Bubbles\BubbleDisplay\Debug\BubblesDisplay.exe
        FinalizeBuildStatus:
          Deleting file "Debug\BubblesDisplay.unsuccessfulbuild".
          Touching "Debug\BubblesDisplay.lastbuildstate".
@@ -51,4 +17,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:29.89
+Time Elapsed 00:00:00.10

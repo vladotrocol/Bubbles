@@ -85,9 +85,6 @@
     <ClCompile Include="WaterDisplayUSBController\XMOSControlPlugin.cpp">
       <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
     </ClCompile>
-    <ClCompile Include="CallibrationEngine\Homography.cpp">
-      <Filter>CallibrationEngine\Homographies</Filter>
-    </ClCompile>
     <ClCompile Include="DisplayKernel\OgreApplications\VideoPlayer.cpp">
       <Filter>DisplayKernel\OgreApplications</Filter>
     </ClCompile>
@@ -116,6 +113,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CallibrationEngine\IClock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source Code\Calibrator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -180,14 +180,8 @@
     <ClInclude Include="WaterDisplayUSBController\XMOSPluginEventObservers.h">
       <Filter>CallibrationEngine\WaterDisplayUSBController</Filter>
     </ClInclude>
-    <ClInclude Include="CallibrationEngine\Homography.h">
-      <Filter>CallibrationEngine\Homographies</Filter>
-    </ClInclude>
     <ClInclude Include="DisplayKernel\OgreApplications\VideoPlayer.h">
       <Filter>DisplayKernel\OgreApplications</Filter>
-    </ClInclude>
-    <ClInclude Include="Source Code\BubbleGenerator.h">
-      <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Source Code\Bubble.h">
       <Filter>Header Files</Filter>
@@ -214,6 +208,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CallibrationEngine\IClock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\BubbleGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source Code\Calibrator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
